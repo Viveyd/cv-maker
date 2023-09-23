@@ -1,3 +1,5 @@
-export default Form(){
-    
+export default function Form(){
+    return(
+        <input type="text" />
+    )
 }
