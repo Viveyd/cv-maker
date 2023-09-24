@@ -1,9 +1,11 @@
 import { useState } from "react";
 import InputText from "./InputText";
 import Education from "./Education";
+import Experience from "./Experience";
 export default function Form() {
   const [{ name, email, phone, country, city }, setPersonal] = useState({});
   const [education, setEdu] = useState([]);
+  const [experience, setExp] = useState([]);
   function changeHandler(e, name) {
     setFormData({ ...formData, [name]: e.target.value });
   }
@@ -45,9 +47,7 @@ export default function Form() {
         />
       </section>
       <Education data={education} updater={setEdu} />
-      <section className="experience">
-        <h1> Experience</h1>
-      </section>
+      <Experience data={experience} updater={setExp} />
       <section className="skills">
         <h1> Skills</h1>
       </section>
