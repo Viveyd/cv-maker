@@ -1,8 +1,9 @@
 import { useState } from "react";
 import InputText from "./InputText";
+import Education from "./Education";
 export default function Form() {
-  const [formData, setFormData] = useState({});
-
+  const [{ name, email, phone, country, city }, setPersonal] = useState({});
+  const [education, setEdu] = useState([]);
   function changeHandler(e, name) {
     setFormData({ ...formData, [name]: e.target.value });
   }
@@ -13,39 +14,37 @@ export default function Form() {
         <InputText
           label="Name"
           name="name"
-          value={formData.name}
+          value={name}
           changeHandler={changeHandler}
         />
         <InputText
           label="Email"
           name="email"
           type="email"
-          value={formData.email}
+          value={email}
           changeHandler={changeHandler}
         />
         <InputText
           label="Phone Number"
           name="phone"
           type="phone"
-          value={formData.phone}
+          value={phone}
           changeHandler={changeHandler}
         />
         <InputText
           label="Country"
           name="country"
-          value={formData.country}
+          value={country}
           changeHandler={changeHandler}
         />
         <InputText
           label="City"
           name="city"
-          value={formData.city}
+          value={city}
           changeHandler={changeHandler}
         />
       </section>
-      <section className="education">
-        <h1>Education</h1>
-      </section>
+      <Education data={education} updater={setEdu} />
       <section className="experience">
         <h1> Experience</h1>
       </section>
