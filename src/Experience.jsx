@@ -23,7 +23,7 @@ export default function Experience({ data, updater }) {
   }
 
   return (
-    <section>
+    <section className="experience">
       <h1> Experience </h1>
       <button onClick={addData}> + </button>
       <ul>

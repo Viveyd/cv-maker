@@ -5,7 +5,7 @@ export default function Personal({ data = {}, updater }) {
     updater({ ...data, [name]: e.target.value });
   }
   return (
-    <section className="personal-info">
+    <section className="personal">
       <h1> Personal Information </h1>
       {Object.keys(data).map((item, index) => {
         return (

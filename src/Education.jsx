@@ -22,7 +22,7 @@ export default function Education({ data, updater }) {
   }
 
   return (
-    <section>
+    <section className="experience">
       <h1> Education </h1>
       <button onClick={addData}> + </button>
       <ul>

@@ -18,7 +18,7 @@ export default function Achievements({ data = [], updater }) {
   }
 
   return (
-    <section>
+    <section className="achievements">
       <h1> Achievements </h1>
       <button onClick={addData}> + </button>
       <ul>
