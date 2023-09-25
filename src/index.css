@@ -2,9 +2,22 @@
   font-size: 62.5%;
 }
 
+#root {
+  padding: 0;
+}
+
 form {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+form section a {
+  display: flex;
+  text-decoration: none;
+  background-color: grey;
+  border: 1px solid black;
+  padding: 0.6rem;
+  width: 100%;
 }
 
 form section h1 {

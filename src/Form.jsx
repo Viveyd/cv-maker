@@ -16,14 +16,45 @@ export default function Form() {
   const [experience, setExp] = useState([]);
   const [skills, setSkills] = useState([]);
   const [achievements, setAchievements] = useState([]);
+  const [activeSection, setActiveSection] = useState("personal");
+
+  function changeActiveSection(section) {
+    if (activeSection === section) setActiveSection(null);
+    else setActiveSection(section);
+  }
 
   return (
     <form>
-      <Personal data={personal} updater={setPersonal} />
-      <Education data={education} updater={setEdu} />
-      <Experience data={experience} updater={setExp} />
-      <Skills data={skills} updater={setSkills} />
-      <Achievements data={achievements} updater={setAchievements} />
+      <Personal
+        data={personal}
+        updater={setPersonal}
+        toggler={changeActiveSection}
+        active={activeSection === "personal"}
+      />
+      <Education
+        data={education}
+        updater={setEdu}
+        toggler={changeActiveSection}
+        active={activeSection === "education"}
+      />
+      <Experience
+        data={experience}
+        updater={setExp}
+        toggler={changeActiveSection}
+        active={activeSection === "experience"}
+      />
+      <Skills
+        data={skills}
+        updater={setSkills}
+        toggler={changeActiveSection}
+        active={activeSection === "skills"}
+      />
+      <Achievements
+        data={achievements}
+        updater={setAchievements}
+        toggler={changeActiveSection}
+        active={activeSection === "achievements"}
+      />
     </form>
   );
 }

@@ -1,12 +1,18 @@
 import InputText from "./InputText";
 
-export default function Personal({ data = {}, updater }) {
+export default function Personal({ data = {}, active, updater, toggler }) {
   function updateData(e, name) {
     updater({ ...data, [name]: e.target.value });
   }
-  return (
-    <section className="personal">
-      <h1> Personal Information </h1>
+
+  function setActive(e) {
+    e.preventDefault();
+    toggler("personal");
+  }
+
+  function Content() {
+    if (!active) return;
+    return (
       <ul>
         {Object.keys(data).map((item, index) => {
           return (
@@ -21,6 +27,15 @@ export default function Personal({ data = {}, updater }) {
           );
         })}
       </ul>
+    );
+  }
+
+  return (
+    <section className="personal">
+      <a href="" onClick={setActive}>
+        <h1> Personal Information </h1>
+      </a>
+      <Content />
     </section>
   );
 }

@@ -1,6 +1,6 @@
 import InputText from "./InputText";
 
-export default function Experience({ data, updater }) {
+export default function Experience({ data, updater, active, toggler }) {
   function addData(e) {
     e.preventDefault();
     const newData = {
@@ -22,34 +22,50 @@ export default function Experience({ data, updater }) {
     updater(newData);
   }
 
+  function setActive(e) {
+    e.preventDefault();
+    toggler("experience");
+  }
+
+  function Content() {
+    if (!active) return;
+    return (
+      <>
+        <button onClick={addData}> + </button>
+        <ul>
+          {data.map((item) => {
+            return (
+              <li key={item.id}>
+                {Object.keys(item).map((propName) => {
+                  if (propName === "id") return;
+                  return (
+                    <InputText
+                      key={propName}
+                      label={
+                        propName.includes("year")
+                          ? propName.replace("year", "year ")
+                          : propName
+                      }
+                      value={item[propName]}
+                      type="text"
+                      changeHandler={(e) => editData(e, item.id, propName)}
+                    />
+                  );
+                })}
+              </li>
+            );
+          })}
+        </ul>
+      </>
+    );
+  }
+
   return (
     <section className="experience">
-      <h1> Experience </h1>
-      <button onClick={addData}> + </button>
-      <ul>
-        {data.map((item) => {
-          return (
-            <li key={item.id}>
-              {Object.keys(item).map((propName) => {
-                if (propName === "id") return;
-                return (
-                  <InputText
-                    key={propName}
-                    label={
-                      propName.includes("year")
-                        ? propName.replace("year", "year ")
-                        : propName
-                    }
-                    value={item[propName]}
-                    type="text"
-                    changeHandler={(e) => editData(e, item.id, propName)}
-                  />
-                );
-              })}
-            </li>
-          );
-        })}
-      </ul>
+      <a href="" onClick={setActive}>
+        <h1> Experience </h1>
+      </a>
+      <Content />
     </section>
   );
 }
