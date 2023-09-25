@@ -34,7 +34,7 @@ export default function Education({ data, updater }) {
                 return (
                   <InputText
                     key={propName}
-                    label={propName}
+                    label={propName === "yearEnd" ? "year end" : propName}
                     value={item[propName]}
                     type="text"
                     changeHandler={(e) => editData(e, item.id, propName)}

@@ -35,7 +35,11 @@ export default function Experience({ data, updater }) {
                 return (
                   <InputText
                     key={propName}
-                    label={propName}
+                    label={
+                      propName.includes("year")
+                        ? propName.replace("year", "year ")
+                        : propName
+                    }
                     value={item[propName]}
                     type="text"
                     changeHandler={(e) => editData(e, item.id, propName)}

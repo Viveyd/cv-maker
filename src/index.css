@@ -1,0 +1,47 @@
+:root {
+  font-size: 62.5%;
+}
+
+form {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+form section h1 {
+  font-size: 2rem;
+}
+
+form input[type="text"] {
+  padding: 12px;
+}
+
+form label > span {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  list-style-type: none;
+  padding: 0;
+}
+
+section li,
+section.personal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+section label {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+section label span {
+  text-transform: capitalize;
+}
