@@ -7,17 +7,20 @@ export default function Personal({ data = {}, updater }) {
   return (
     <section className="personal">
       <h1> Personal Information </h1>
-      {Object.keys(data).map((item, index) => {
-        return (
-          <InputText
-            key={index}
-            label={item}
-            name={item}
-            value={data[item]}
-            changeHandler={updateData}
-          />
-        );
-      })}
+      <ul>
+        {Object.keys(data).map((item, index) => {
+          return (
+            <li key={index}>
+              <InputText
+                label={item}
+                name={item}
+                value={data[item]}
+                changeHandler={updateData}
+              />
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 }

@@ -29,7 +29,7 @@ section ul {
 }
 
 section li,
-section.personal {
+section.personal ul {
   display: flex;
   flex-direction: column;
   align-items: center;
