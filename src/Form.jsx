@@ -4,19 +4,23 @@ import Education from "./Education";
 import Experience from "./Experience";
 import Skills from "./Skills";
 import Achievements from "./Achievements";
-export default function Form() {
-  const [personal, setPersonal] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    country: "",
-    city: "",
-  });
-  const [education, setEdu] = useState([]);
-  const [experience, setExp] = useState([]);
-  const [skills, setSkills] = useState([]);
-  const [achievements, setAchievements] = useState([]);
-  const [activeSection, setActiveSection] = useState("personal");
+export default function Form({ data, updater }) {
+  const {
+    personal,
+    education,
+    experience,
+    skills,
+    achievements,
+    activeSection,
+  } = data;
+  const {
+    setPersonal,
+    setEdu,
+    setExp,
+    setSkills,
+    setAchievements,
+    setActiveSection,
+  } = updater;
 
   function changeActiveSection(section) {
     if (activeSection === section) setActiveSection(null);

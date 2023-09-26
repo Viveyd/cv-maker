@@ -1,3 +1,1 @@
-export default function Preview(){
-    
-}
+export default function Preview() {}
