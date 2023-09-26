@@ -39,7 +39,9 @@ function App() {
           setActiveSection,
         }}
       />
-      <Preview data={(personal, education, experience, skills, achievements)} />
+      <Preview
+        data={{ personal, education, experience, skills, achievements }}
+      />
     </>
   );
 }
