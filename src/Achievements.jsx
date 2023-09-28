@@ -22,32 +22,20 @@ export default function Achievements({ data = [], updater, active, toggler }) {
     toggler("achievements");
   }
 
-  function Content() {
-    if (!active) return;
+  function AchievementFS(data) {
     return (
-      <>
-        <button onClick={addData}> + </button>
-        <ul>
-          {data.map((item) => {
-            return (
-              <li key={item.id}>
-                {Object.keys(item).map((propName) => {
-                  if (propName === "id") return;
-                  return (
-                    <InputText
-                      key={propName}
-                      label={propName}
-                      value={item[propName]}
-                      type="text"
-                      changeHandler={(e) => editData(e, item.id, propName)}
-                    />
-                  );
-                })}
-              </li>
-            );
-          })}
-        </ul>
-      </>
+      <fieldset key={data.id}>
+        <InputText
+          label="Achievement"
+          value={data.achievement}
+          changeHandler={(e) => editData(e, data.id, "achievement")}
+        />
+        <InputText
+          label="Description"
+          value={data.description}
+          changeHandler={(e) => editData(e, data.id, "description")}
+        />
+      </fieldset>
     );
   }
 
@@ -56,7 +44,12 @@ export default function Achievements({ data = [], updater, active, toggler }) {
       <a href="" onClick={setActive}>
         <h1> Achievements </h1>
       </a>
-      <Content />
+      {active && (
+        <>
+          <button onClick={addData}> Add Achievement</button>
+          {data.map((item) => AchievementFS(item))}
+        </>
+      )}
     </section>
   );
 }
