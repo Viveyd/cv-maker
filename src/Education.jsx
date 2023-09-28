@@ -9,15 +9,14 @@ export default function Education({ data, updater, active, toggler }) {
       course: "",
       degree: "",
       yearEnd: "",
-      achievements: [],
+      achievements: "",
     };
     updater(data.concat(newData));
   }
 
   function editData(e, id, key) {
     const newData = [...data];
-    newData.find((item) => item.id === id)[key] =
-      key === "achievements" ? e.target.value.split(",") : e.target.value;
+    newData.find((item) => item.id === id)[key] = e.target.value;
     updater(newData);
   }
 
@@ -26,32 +25,38 @@ export default function Education({ data, updater, active, toggler }) {
     toggler("education");
   }
 
-  function Content() {
-    if (!active) return;
+  function EducationFS(data, index) {
     return (
-      <>
-        <button onClick={addData}> + </button>
-        <ul>
-          {data.map((item) => {
-            return (
-              <li key={item.id}>
-                {Object.keys(item).map((propName) => {
-                  if (propName === "id") return;
-                  return (
-                    <InputText
-                      key={propName}
-                      label={propName === "yearEnd" ? "year end" : propName}
-                      value={item[propName]}
-                      type="text"
-                      changeHandler={(e) => editData(e, item.id, propName)}
-                    />
-                  );
-                })}
-              </li>
-            );
-          })}
-        </ul>
-      </>
+      <fieldset key={data.id}>
+        <legend> Education {index + 1} </legend>
+        <InputText
+          label="School"
+          value={data.school}
+          changeHandler={(e) => editData(e, index, "school")}
+        />
+        <InputText
+          label="Course"
+          value={data.course}
+          changeHandler={(e) => editData(e, index, "course")}
+        />
+        <InputText
+          label="Degree"
+          value={data.degree}
+          changeHandler={(e) => editData(e, index, "degree")}
+        />
+        <InputText
+          label="Year Graduated / Left"
+          value={data.yearEnd}
+          changeHandler={(e) => editData(e, index, "yearEnd")}
+        />
+        <label>
+          <span> Achievements </span>
+          <textarea
+            value={data.achievements}
+            onChange={(e) => editData(e, index, "achievements")}
+          ></textarea>
+        </label>
+      </fieldset>
     );
   }
 
@@ -60,7 +65,12 @@ export default function Education({ data, updater, active, toggler }) {
       <a href="" onClick={setActive}>
         <h1> Education </h1>
       </a>
-      <Content />
+      {active && (
+        <>
+          <button onClick={addData}> Add Education </button>
+          {data.map((item, index) => EducationFS(item, index))}
+        </>
+      )}
     </section>
   );
 }

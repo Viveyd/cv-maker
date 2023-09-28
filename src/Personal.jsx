@@ -10,32 +10,50 @@ export default function Personal({ data = {}, active, updater, toggler }) {
     toggler("personal");
   }
 
-  function Content() {
-    if (!active) return;
-    return (
-      <ul>
-        {Object.keys(data).map((item, index) => {
-          return (
-            <li key={index}>
-              <InputText
-                label={item}
-                name={item}
-                value={data[item]}
-                changeHandler={updateData}
-              />
-            </li>
-          );
-        })}
-      </ul>
-    );
-  }
-
   return (
     <section className="personal">
       <a href="" onClick={setActive}>
         <h1> Personal Information </h1>
       </a>
-      <Content />
+      {active && (
+        <ul>
+          <li>
+            <InputText
+              label="Full Name"
+              value={data.name}
+              changeHandler={(e) => updateData(e, "name")}
+            />
+          </li>
+          <li>
+            <InputText
+              label="Phone Number"
+              value={data.phone}
+              changeHandler={(e) => updateData(e, "phone")}
+            />
+          </li>
+          <li>
+            <InputText
+              label="Email Address"
+              value={data.email}
+              changeHandler={(e) => updateData(e, "email")}
+            />
+          </li>
+          <li>
+            <InputText
+              label="Country"
+              value={data.country}
+              changeHandler={(e) => updateData(e, "country")}
+            />
+          </li>
+          <li>
+            <InputText
+              label="City"
+              value={data.city}
+              changeHandler={(e) => updateData(e, "city")}
+            />
+          </li>
+        </ul>
+      )}
     </section>
   );
 }
