@@ -33,7 +33,7 @@ form label > span {
   font-weight: bold;
 }
 
-section ul {
+form section ul {
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -41,16 +41,39 @@ section ul {
   padding: 0;
 }
 
-section li,
-section.personal ul {
+form section li,
+form section.personal ul {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
 }
 
-section label {
+form section label {
   display: flex;
   flex-direction: column;
   align-items: start;
+}
+
+.preview .experience > ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+.preview .experience > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+
+.preview .experience h3,
+.preview .experience p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview .experience ul.achievements {
+  list-style-type: square;
+  padding-left: 1.6rem;
+  text-align: left;
 }
