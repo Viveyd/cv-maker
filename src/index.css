@@ -55,6 +55,14 @@ form section label {
   align-items: start;
 }
 
+.preview section > h2 {
+  text-align: left;
+}
+
+.preview hr {
+  margin-top: 2px;
+}
+
 .preview .experience > ul,
 .preview .education > ul {
   display: flex;

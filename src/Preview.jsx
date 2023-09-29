@@ -7,9 +7,9 @@ export default function Preview({ data }) {
         {personal.email} * {personal.phone} * {personal.city},{" "}
         {personal.country}
       </p>
-      <hr></hr>
       <section className="experience">
         <h2>Work Experience</h2>
+        <hr></hr>
         <ul>
           {experience.map((item) => {
             const {
@@ -46,9 +46,9 @@ export default function Preview({ data }) {
           })}
         </ul>
       </section>
-      <hr></hr>
       <section className="education">
         <h2>Educational Background</h2>
+        <hr></hr>
         <ul>
           {education.map((item) => {
             const {
