@@ -55,24 +55,29 @@ form section label {
   align-items: start;
 }
 
-.preview .experience > ul {
+.preview .experience > ul,
+.preview .education > ul {
   display: flex;
   flex-direction: column;
   padding-left: 0;
 }
 
-.preview .experience > ul > li {
+.preview .experience > ul > li,
+.preview .education > ul > li {
   display: flex;
   flex-direction: column;
 }
 
 .preview .experience h3,
-.preview .experience p {
+.preview .experience p,
+.preview .education h3,
+.preview .education p {
   display: flex;
   justify-content: space-between;
 }
 
-.preview .experience ul.achievements {
+.preview .experience ul.achievements,
+.preview .education ul.achievements {
   list-style-type: square;
   padding-left: 1.6rem;
   text-align: left;
