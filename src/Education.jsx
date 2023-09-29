@@ -6,10 +6,12 @@ export default function Education({ data, updater, active, toggler }) {
     const newData = {
       id: data.length ? data[data.length - 1].id + 1 : 0,
       school: "",
+      city: "",
+      country: "",
       course: "",
       degree: "",
       yearEnd: "",
-      achievements: "",
+      achievements: "Honors, Projects, Awards",
     };
     updater(data.concat(newData));
   }
@@ -33,6 +35,16 @@ export default function Education({ data, updater, active, toggler }) {
           label="School"
           value={data.school}
           changeHandler={(e) => editData(e, index, "school")}
+        />
+        <InputText
+          label="City"
+          value={data.school}
+          changeHandler={(e) => editData(e, index, "city")}
+        />
+        <InputText
+          label="Country"
+          value={data.school}
+          changeHandler={(e) => editData(e, index, "country")}
         />
         <InputText
           label="Course"

@@ -51,9 +51,35 @@ export default function Preview({ data }) {
         <h2>Educational Background</h2>
         <ul>
           {education.map((item) => {
+            const {
+              id,
+              school,
+              city,
+              country,
+              course,
+              degree,
+              yearEnd,
+              achievements,
+            } = item;
             return (
-              <li key={item.id}>
-                <h3> {item.school || "School"} </h3>
+              <li key={id}>
+                <h3>
+                  <span>{`${school || "School Name"}`}</span>
+                  <span>{`${city || "City/Province"}, ${
+                    country || "Country"
+                  }`}</span>
+                </h3>
+                <p>
+                  <span>{`${degree || "Bachelor's"} Degree, Major in ${
+                    course || "Information Technology"
+                  }`}</span>
+                  <span> {`${yearEnd || "Year Graduated / Left"} `}</span>
+                </p>
+                <ul className="achievements">
+                  {achievements.split(",").map((item, index) => (
+                    <li key={index}> {item.trim()} </li>
+                  ))}
+                </ul>
               </li>
             );
           })}
