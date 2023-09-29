@@ -15,7 +15,7 @@ export default function Preview({ data }) {
       <hr></hr>
       <section className="experience">
         <h2>Work Experience</h2>
-        <hr></hr>
+        <hr className="t-margin-2"></hr>
         <ul>
           {experience.map((item) => {
             const {
@@ -54,7 +54,7 @@ export default function Preview({ data }) {
       </section>
       <section className="education">
         <h2>Educational Background</h2>
-        <hr></hr>
+        <hr className="t-margin-2"></hr>
         <ul>
           {education.map((item) => {
             const {

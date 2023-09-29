@@ -55,11 +55,24 @@ form section label {
   align-items: start;
 }
 
+.preview section > h1 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.preview section.personal {
+  text-align: left;
+}
+
+.preview section.personal > span {
+  font-size: 1rem;
+}
+
 .preview section > h2 {
   text-align: left;
 }
 
-.preview hr {
+.preview hr.t-margin-2 {
   margin-top: 2px;
 }
 
