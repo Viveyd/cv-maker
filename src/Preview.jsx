@@ -2,11 +2,17 @@ export default function Preview({ data }) {
   const { personal, education, experience, skills, achievements } = data;
   return (
     <section className="preview">
-      <h1> {personal.name}</h1>
-      <p>
-        {personal.email} * {personal.phone} * {personal.city},{" "}
-        {personal.country}
-      </p>
+      <section className="personal">
+        <h1> {personal.name || "Johnny C. Dough"}</h1>
+        <span>
+          {`${personal.email || "johnny.dough@gmail.com"} | ${
+            personal.phone || "+679542541128"
+          } | ${personal.city || "Manila"}, ${
+            personal.country || "Philippines"
+          }`}
+        </span>
+      </section>
+      <hr></hr>
       <section className="experience">
         <h2>Work Experience</h2>
         <hr></hr>
