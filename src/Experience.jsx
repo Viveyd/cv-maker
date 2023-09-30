@@ -7,6 +7,7 @@ export default function Experience({ data, updater, active, toggler }) {
       id: data.length ? data[data.length - 1].id + 1 : 0,
       company: "",
       city: "",
+      country: "",
       position: "",
       yearStart: "",
       yearEnd: "",
@@ -26,51 +27,6 @@ export default function Experience({ data, updater, active, toggler }) {
     toggler("experience");
   }
 
-  function ExperienceFS(data, index) {
-    return (
-      <fieldset key={data.id}>
-        <legend> Experience {index + 1} </legend>
-        <InputText
-          label="Company"
-          value={data.company}
-          changeHandler={(e) => editData(e, index, "company")}
-        />
-        <InputText
-          label="Country"
-          value={data.country}
-          changeHandler={(e) => editData(e, index, "country")}
-        />
-        <InputText
-          label="City"
-          value={data.city}
-          changeHandler={(e) => editData(e, index, "city")}
-        />
-        <InputText
-          label="Position at Company"
-          value={data.position}
-          changeHandler={(e) => editData(e, index, "position")}
-        />
-        <InputText
-          label="Year Started"
-          value={data.yearStart}
-          changeHandler={(e) => editData(e, index, "yearStart")}
-        />
-        <InputText
-          label="Year Left"
-          value={data.yearEnd}
-          changeHandler={(e) => editData(e, index, "yearEnd")}
-        />
-        <label>
-          <span> Achievements </span>
-          <textarea
-            value={data.achievements}
-            onChange={(e) => editData(e, index, "achievements")}
-          ></textarea>
-        </label>
-      </fieldset>
-    );
-  }
-
   return (
     <section className="experience">
       <a href="" onClick={setActive}>
@@ -79,9 +35,61 @@ export default function Experience({ data, updater, active, toggler }) {
       {active && (
         <>
           <button onClick={addData}> Add Work Experience </button>
-          {data.map((item, index) => ExperienceFS(item, index))}
+          {data.map((item, index) => (
+            <ExperienceFS
+              key={item.id}
+              data={item}
+              index={index}
+              updater={editData}
+            />
+          ))}
         </>
       )}
     </section>
+  );
+}
+
+function ExperienceFS({ data, index, updater }) {
+  return (
+    <fieldset>
+      <legend> Experience {index + 1} </legend>
+      <InputText
+        label="Company"
+        value={data.company}
+        changeHandler={(e) => updater(e, index, "company")}
+      />
+      <InputText
+        label="Country"
+        value={data.country}
+        changeHandler={(e) => updater(e, index, "country")}
+      />
+      <InputText
+        label="City"
+        value={data.city}
+        changeHandler={(e) => updater(e, index, "city")}
+      />
+      <InputText
+        label="Position at Company"
+        value={data.position}
+        changeHandler={(e) => updater(e, index, "position")}
+      />
+      <InputText
+        label="Year Started"
+        value={data.yearStart}
+        changeHandler={(e) => updater(e, index, "yearStart")}
+      />
+      <InputText
+        label="Year Left"
+        value={data.yearEnd}
+        changeHandler={(e) => updater(e, index, "yearEnd")}
+      />
+      <label>
+        <span> Achievements </span>
+        <textarea
+          value={data.achievements}
+          onChange={(e) => updater(e, index, "achievements")}
+        ></textarea>
+      </label>
+    </fieldset>
   );
 }
