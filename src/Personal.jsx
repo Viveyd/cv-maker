@@ -52,6 +52,15 @@ export default function Personal({ data = {}, active, updater, toggler }) {
               changeHandler={(e) => updateData(e, "city")}
             />
           </li>
+          <li>
+            <label>
+              <span> Professional Statement </span>
+              <textarea
+                value={data.statement}
+                onChange={(e) => updateData(e, "statement")}
+              ></textarea>
+            </label>
+          </li>
         </ul>
       )}
     </section>

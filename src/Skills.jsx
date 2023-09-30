@@ -1,7 +1,22 @@
 export default function Skills({ data, updater, active, toggler }) {
-  function updateData(e, key) {
-    updater({ ...data, [key]: e.target.value });
+  function addData(e) {
+    e.preventDefault();
+    const newData = {
+      id: data.length ? data[data.length - 1].id + 1 : 0,
+      label: "",
+      values: "",
+    };
+    updater(data.concat(newData));
   }
+
+  function updateData(e, id, key) {
+    const updatedData = data.map((item) => {
+      if (item.id === id) item[key] = e.target.value;
+      return item;
+    });
+    updater(updatedData);
+  }
+
   function setActive(e) {
     e.preventDefault();
     toggler("skills");
@@ -14,22 +29,36 @@ export default function Skills({ data, updater, active, toggler }) {
       </a>
       {active && (
         <>
-          <label>
-            <span> Skills </span>
-            <textarea
-              value={data.skills}
-              onChange={(e) => updateData(e, "skills")}
-            ></textarea>
-          </label>
-          <label>
-            <span> Interests </span>
-            <textarea
-              value={data.interests}
-              onChange={(e) => updateData(e, "interests")}
-            ></textarea>
-          </label>
+          <button onClick={addData}> Add group </button>
+          <ul>
+            {data.map((item) => (
+              <SkillGroup key={item.id} data={item} updater={updateData} />
+            ))}
+          </ul>
         </>
       )}
     </section>
+  );
+}
+
+function SkillGroup({ data, updater }) {
+  return (
+    <fieldset>
+      <legend> Group </legend>
+      <label>
+        <span> Label </span>
+        <input
+          value={data.label}
+          onChange={(e) => updater(e, data.id, "label")}
+        ></input>
+      </label>
+      <label>
+        <span> Values </span>
+        <textarea
+          value={data.values}
+          onChange={(e) => updater(e, data.id, "values")}
+        ></textarea>
+      </label>
+    </fieldset>
   );
 }
