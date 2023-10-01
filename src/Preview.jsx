@@ -44,7 +44,7 @@ export default function Preview({ data }) {
                     country || "Country"
                   }`}</span>
                 </p>
-                <ul className="achievements">
+                <ul className="achievements preview-list-box">
                   {achievements.split(",").map((item, index) => (
                     <li key={index}> {item.trim()} </li>
                   ))}
@@ -83,7 +83,7 @@ export default function Preview({ data }) {
                   }`}</span>
                   <span> {`${yearEnd || "Year Graduated / Left"} `}</span>
                 </p>
-                <ul className="achievements">
+                <ul className="achievements preview-list-box">
                   {achievements.split(",").map((item, index) => (
                     <li key={index}> {item.trim()} </li>
                   ))}
@@ -96,7 +96,7 @@ export default function Preview({ data }) {
       <section className="achievements">
         <h2>Achievements</h2>
         <hr className="t-margin-2"></hr>
-        <ul>
+        <ul className="preview-list-box">
           {achievements.map((item) => {
             const { id, achievement, description } = item;
             return (
@@ -111,7 +111,7 @@ export default function Preview({ data }) {
       <section className="skills">
         <h2>Skills & Interests</h2>
         <hr className="t-margin-2"></hr>
-        <ul>
+        <ul className="preview-list-box">
           {skills.map((item) => {
             const { id, label, values } = item;
             return (
