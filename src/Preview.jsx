@@ -97,13 +97,15 @@ export default function Preview({ data }) {
         <ul>
           {skills.map((item) => {
             const { id, label, values } = item;
-
             return (
               <li key={id}>
-                {`${label}: ${values
-                  .split(",")
-                  .map((item) => item.trim())
-                  .join(";")}`}
+                <strong> {label}: </strong>
+                <span>
+                  {values
+                    .split(",")
+                    .map((item) => item.trim())
+                    .join("; ")}
+                </span>
               </li>
             );
           })}

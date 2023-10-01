@@ -98,7 +98,8 @@ form section label {
 }
 
 .preview .experience ul.achievements,
-.preview .education ul.achievements {
+.preview .education ul.achievements,
+.preview .skills ul {
   list-style-type: square;
   padding-left: 1.6rem;
   text-align: left;
