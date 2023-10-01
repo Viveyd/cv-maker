@@ -91,6 +91,24 @@ export default function Preview({ data }) {
           })}
         </ul>
       </section>
+      <section className="skills">
+        <h2>Skills & Interests</h2>
+        <hr className="t-margin-2"></hr>
+        <ul>
+          {skills.map((item) => {
+            const { id, label, values } = item;
+
+            return (
+              <li key={id}>
+                {`${label}: ${values
+                  .split(",")
+                  .map((item) => item.trim())
+                  .join(";")}`}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
     </section>
   );
 }
