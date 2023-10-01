@@ -10,6 +10,8 @@ function App() {
     email: "",
     country: "",
     city: "",
+    summary: "",
+    links: [],
   });
   const [education, setEdu] = useState([]);
   const [experience, setExp] = useState([]);

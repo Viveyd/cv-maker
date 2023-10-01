@@ -54,10 +54,10 @@ export default function Personal({ data = {}, active, updater, toggler }) {
           </li>
           <li>
             <label>
-              <span> Professional Statement </span>
+              <span> Professional Summary </span>
               <textarea
-                value={data.statement}
-                onChange={(e) => updateData(e, "statement")}
+                value={data.summary}
+                onChange={(e) => updateData(e, "summary")}
               ></textarea>
             </label>
           </li>
