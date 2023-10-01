@@ -13,6 +13,8 @@ export default function Preview({ data }) {
         </span>
       </section>
       <hr></hr>
+      <section>{personal.summary}</section>
+      <hr></hr>
       <section className="experience">
         <h2>Work Experience</h2>
         <hr className="t-margin-2"></hr>
@@ -86,6 +88,21 @@ export default function Preview({ data }) {
                     <li key={index}> {item.trim()} </li>
                   ))}
                 </ul>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+      <section className="achievements">
+        <h2>Achievements</h2>
+        <hr className="t-margin-2"></hr>
+        <ul>
+          {achievements.map((item) => {
+            const { id, achievement, description } = item;
+            return (
+              <li key={id}>
+                <strong> {achievement}: </strong>
+                <span>{description}</span>
               </li>
             );
           })}
