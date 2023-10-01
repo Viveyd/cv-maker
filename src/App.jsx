@@ -10,7 +10,8 @@ function App() {
     email: "",
     country: "",
     city: "",
-    summary: "",
+    summary:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam quasi nostrum vero fugit deleniti! Enim at aliquid tenetur qui culpa laboriosam nam maxime possimus inventore asperiores nihil, nisi dolor debitis!",
     links: [],
   });
   const [education, setEdu] = useState([
@@ -20,7 +21,7 @@ function App() {
       course: "",
       degree: "",
       yearEnd: "",
-      achievements: "",
+      achievements: "Honors, Projects, Awards",
     },
   ]);
   const [experience, setExp] = useState([
@@ -32,7 +33,8 @@ function App() {
       position: "",
       yearStart: "",
       yearEnd: "",
-      achievements: "",
+      achievements:
+        "Sample Job Responsibility 1, Sample Job Responsibility 2, Achievement 1, Achievement 2",
     },
   ]);
   const [skills, setSkills] = useState([

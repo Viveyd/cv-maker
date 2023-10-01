@@ -11,7 +11,8 @@ export default function Experience({ data, updater, active, toggler }) {
       position: "",
       yearStart: "",
       yearEnd: "",
-      achievements: "",
+      achievements:
+        "Sample Job Responsibility 1, Sample Job Responsibility 2, Achievement 1, Achievement 2",
     };
     updater(data.concat(newData));
   }
