@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito&family=Satisfy&display=swap");
+
 :root {
   font-size: 62.5%;
 }
@@ -14,7 +16,7 @@ form {
 form section a {
   display: flex;
   text-decoration: none;
-  background-color: grey;
+  background-color: rgb(255, 255, 255);
   border: 1px solid black;
   padding: 0.6rem;
   width: 100%;
@@ -22,6 +24,7 @@ form section a {
 
 form section h1 {
   font-size: 2rem;
+  font-family: "Gabarito", cursive;
 }
 
 form input[type="text"] {
