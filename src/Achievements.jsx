@@ -1,4 +1,5 @@
 import InputText from "./InputText";
+import DropdownAnchor from "./DropdownAnchor";
 
 export default function Achievements({ data = [], updater, active, toggler }) {
   function addData(e) {
@@ -41,9 +42,7 @@ export default function Achievements({ data = [], updater, active, toggler }) {
 
   return (
     <section className="achievements">
-      <a href="" onClick={setActive}>
-        <h1> Achievements </h1>
-      </a>
+      <DropdownAnchor label="Achievements" toggle={setActive} />
       {active && (
         <>
           <button onClick={addData}> Add Achievement</button>

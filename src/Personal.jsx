@@ -1,3 +1,4 @@
+import DropdownAnchor from "./DropdownAnchor";
 import InputText from "./InputText";
 
 export default function Personal({ data = {}, active, updater, toggler }) {
@@ -12,9 +13,7 @@ export default function Personal({ data = {}, active, updater, toggler }) {
 
   return (
     <section className="personal">
-      <a href="" onClick={setActive}>
-        <h1> Personal Information </h1>
-      </a>
+      <DropdownAnchor label="Personal Information" toggle={setActive} />
       {active && (
         <ul>
           <li>

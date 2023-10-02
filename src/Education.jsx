@@ -1,4 +1,5 @@
 import InputText from "./InputText";
+import DropdownAnchor from "./DropdownAnchor";
 
 export default function Education({ data, updater, active, toggler }) {
   function addData(e) {
@@ -29,9 +30,7 @@ export default function Education({ data, updater, active, toggler }) {
 
   return (
     <section className="education">
-      <a href="" onClick={setActive}>
-        <h1> Education </h1>
-      </a>
+      <DropdownAnchor label="Education" toggle={setActive} />
       {active && (
         <>
           <button onClick={addData}> Add Education </button>

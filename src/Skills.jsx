@@ -1,3 +1,5 @@
+import DropdownAnchor from "./DropdownAnchor";
+
 export default function Skills({ data, updater, active, toggler }) {
   function addData(e) {
     e.preventDefault();
@@ -24,9 +26,7 @@ export default function Skills({ data, updater, active, toggler }) {
 
   return (
     <section className="skills">
-      <a href="" onClick={setActive}>
-        <h1> Skills & Interests</h1>
-      </a>
+      <DropdownAnchor label="Skills & Interests" toggle={setActive} />
       {active && (
         <>
           <button onClick={addData}> Add group </button>
