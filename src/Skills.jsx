@@ -32,14 +32,11 @@ export default function Skills({ data, updater, active, toggler }) {
         add={active ? addData : null}
       />
       {active && (
-        <>
-          <button onClick={addData}> Add group </button>
-          <ul>
-            {data.map((item) => (
-              <SkillGroup key={item.id} data={item} updater={updateData} />
-            ))}
-          </ul>
-        </>
+        <ul>
+          {data.map((item) => (
+            <SkillGroup key={item.id} data={item} updater={updateData} />
+          ))}
+        </ul>
       )}
     </section>
   );

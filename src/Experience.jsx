@@ -36,19 +36,15 @@ export default function Experience({ data, updater, active, toggler }) {
         toggle={setActive}
         add={active ? addData : null}
       />
-      {active && (
-        <>
-          <button onClick={addData}> Add Work Experience </button>
-          {data.map((item, index) => (
-            <ExperienceFS
-              key={item.id}
-              data={item}
-              index={index}
-              updater={editData}
-            />
-          ))}
-        </>
-      )}
+      {active &&
+        data.map((item, index) => (
+          <ExperienceFS
+            key={item.id}
+            data={item}
+            index={index}
+            updater={editData}
+          />
+        ))}
     </section>
   );
 }

@@ -35,19 +35,15 @@ export default function Education({ data, updater, active, toggler }) {
         toggle={setActive}
         add={active ? addData : null}
       />
-      {active && (
-        <>
-          <button onClick={addData}> Add Education </button>
-          {data.map((item, index) => (
-            <EducationFS
-              key={item.id}
-              data={item}
-              {...{ index }}
-              updater={editData}
-            />
-          ))}
-        </>
-      )}
+      {active &&
+        data.map((item, index) => (
+          <EducationFS
+            key={item.id}
+            data={item}
+            {...{ index }}
+            updater={editData}
+          />
+        ))}
     </section>
   );
 }

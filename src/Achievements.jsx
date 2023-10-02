@@ -47,12 +47,7 @@ export default function Achievements({ data = [], updater, active, toggler }) {
         toggle={setActive}
         add={active ? addData : null}
       />
-      {active && (
-        <>
-          <button onClick={addData}> Add Achievement</button>
-          {data.map((item) => AchievementFS(item))}
-        </>
-      )}
+      {active && data.map((item) => AchievementFS(item))}
     </section>
   );
 }
