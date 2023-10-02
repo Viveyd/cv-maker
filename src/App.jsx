@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Form from "./Form";
 import Preview from "./Preview";
+import Header from "./Header";
 
 function App() {
   const [personal, setPersonal] = useState({
@@ -62,30 +63,36 @@ function App() {
     },
   ]);
   const [activeSection, setActiveSection] = useState("personal");
+  const [previewMode, togglePreview] = useState(false);
 
   return (
     <>
-      <Form
-        data={{
-          personal,
-          education,
-          experience,
-          skills,
-          achievements,
-          activeSection,
-        }}
-        updater={{
-          setPersonal,
-          setEdu,
-          setExp,
-          setSkills,
-          setAchievements,
-          setActiveSection,
-        }}
-      />
-      <Preview
-        data={{ personal, education, experience, skills, achievements }}
-      />
+      <Header previewMode={previewMode} previewToggler={togglePreview} />
+      {!previewMode && (
+        <Form
+          data={{
+            personal,
+            education,
+            experience,
+            skills,
+            achievements,
+            activeSection,
+          }}
+          updater={{
+            setPersonal,
+            setEdu,
+            setExp,
+            setSkills,
+            setAchievements,
+            setActiveSection,
+          }}
+        />
+      )}
+      {previewMode && (
+        <Preview
+          data={{ personal, education, experience, skills, achievements }}
+        />
+      )}
     </>
   );
 }
