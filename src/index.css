@@ -36,9 +36,13 @@ form section a {
   display: flex;
   text-decoration: none;
   background-color: rgb(255, 255, 255);
-  border: 1px solid black;
+  border: 1px solid grey;
   padding: 0.6rem;
   width: 100%;
+}
+form section a > h1 {
+  flex-grow: 1;
+  text-align: left;
 }
 
 form section h1 {
