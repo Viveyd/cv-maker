@@ -39,8 +39,10 @@ export default function Preview({ data }) {
                   }`}</span>
                 </h3>
                 <p>
-                  <span>{`${company || "Company Name"}`}</span>
-                  <span>{`${city || "City/Province"}, ${
+                  <span className="italic">{`${
+                    company || "Company Name"
+                  }`}</span>
+                  <span className="italic">{`${city || "City/Province"}, ${
                     country || "Country"
                   }`}</span>
                 </p>
@@ -78,10 +80,15 @@ export default function Preview({ data }) {
                   }`}</span>
                 </h3>
                 <p>
-                  <span>{`${degree || "Bachelor's"} Degree, Major in ${
+                  <span className="italic">{`${
+                    degree || "Bachelor's"
+                  } Degree, Major in ${
                     course || "Information Technology"
                   }`}</span>
-                  <span> {`${yearEnd || "Year Graduated / Left"} `}</span>
+                  <span className="italic">
+                    {" "}
+                    {`${yearEnd || "Year Graduated / Left"} `}
+                  </span>
                 </p>
                 <ul className="achievements preview-list-box">
                   {achievements.split(",").map((item, index) => (

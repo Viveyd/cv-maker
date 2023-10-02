@@ -1,5 +1,6 @@
 :root {
   font-size: 62.5%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #root {
@@ -81,6 +82,7 @@ form section label {
   display: flex;
   flex-direction: column;
   padding-left: 0;
+  gap: 1.4rem;
 }
 
 .preview .experience > ul > li,
@@ -101,4 +103,37 @@ form section label {
   list-style-type: square;
   padding-left: 1.6rem;
   text-align: left;
+  line-height: 1.7rem;
+}
+
+.italic {
+  font-style: italic;
+}
+
+@media print {
+  body {
+    min-height: unset;
+  }
+  div#root > *:not(.preview) {
+    display: none;
+  }
+  .preview {
+    margin: 0.75in;
+    font-size: 1.2rem !important;
+  }
+  .preview section.personal h1 {
+    font-size: 2.4rem !important;
+  }
+  .preview section.personal span {
+    font-size: 1.6rem !important;
+  }
+  .preview h2 {
+    font-size: 1.6rem !important;
+  }
+  @page {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

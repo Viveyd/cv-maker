@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Form from "./Form";
 import Preview from "./Preview";
+import printPreview from "./printPreview";
 
 function App() {
   const [personal, setPersonal] = useState({
@@ -65,6 +66,7 @@ function App() {
 
   return (
     <>
+      <button onClick={printPreview}> Print Preview </button>
       <Form
         data={{
           personal,
