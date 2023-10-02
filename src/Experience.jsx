@@ -31,7 +31,11 @@ export default function Experience({ data, updater, active, toggler }) {
 
   return (
     <section className="experience">
-      <DropdownAnchor label="Experience" toggle={setActive} />
+      <DropdownAnchor
+        label="Experience"
+        toggle={setActive}
+        add={active ? addData : null}
+      />
       {active && (
         <>
           <button onClick={addData}> Add Work Experience </button>

@@ -26,7 +26,11 @@ export default function Skills({ data, updater, active, toggler }) {
 
   return (
     <section className="skills">
-      <DropdownAnchor label="Skills & Interests" toggle={setActive} />
+      <DropdownAnchor
+        label="Skills & Interests"
+        toggle={setActive}
+        add={active ? addData : null}
+      />
       {active && (
         <>
           <button onClick={addData}> Add group </button>

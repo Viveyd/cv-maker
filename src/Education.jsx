@@ -30,7 +30,11 @@ export default function Education({ data, updater, active, toggler }) {
 
   return (
     <section className="education">
-      <DropdownAnchor label="Education" toggle={setActive} />
+      <DropdownAnchor
+        label="Education"
+        toggle={setActive}
+        add={active ? addData : null}
+      />
       {active && (
         <>
           <button onClick={addData}> Add Education </button>

@@ -42,7 +42,11 @@ export default function Achievements({ data = [], updater, active, toggler }) {
 
   return (
     <section className="achievements">
-      <DropdownAnchor label="Achievements" toggle={setActive} />
+      <DropdownAnchor
+        label="Achievements"
+        toggle={setActive}
+        add={active ? addData : null}
+      />
       {active && (
         <>
           <button onClick={addData}> Add Achievement</button>
