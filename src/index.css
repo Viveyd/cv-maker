@@ -34,6 +34,7 @@ form {
 
 form section a {
   display: flex;
+  gap: 1.6rem;
   text-decoration: none;
   background-color: rgb(255, 255, 255);
   border: 1px solid grey;
@@ -43,6 +44,11 @@ form section a {
 form section a > h1 {
   flex-grow: 1;
   text-align: left;
+}
+
+form section a > button {
+  border: 0;
+  padding: 0;
 }
 
 form section h1 {
