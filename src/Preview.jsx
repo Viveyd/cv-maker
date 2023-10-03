@@ -108,7 +108,7 @@ export default function Preview({ data }) {
             const { id, achievement, description } = item;
             return (
               <li key={id}>
-                <strong> {achievement}: </strong>
+                <strong> {achievement}. </strong>
                 <span>{description}</span>
               </li>
             );
