@@ -58,6 +58,11 @@ function EducationFS({ data, index, updater }) {
         changeHandler={(e) => updater(e, index, "school")}
       />
       <InputText
+        label="Year Graduated / Left"
+        value={data.yearEnd}
+        changeHandler={(e) => updater(e, index, "yearEnd")}
+      />
+      <InputText
         label="City"
         value={data.city}
         changeHandler={(e) => updater(e, index, "city")}
@@ -76,11 +81,6 @@ function EducationFS({ data, index, updater }) {
         label="Degree"
         value={data.degree}
         changeHandler={(e) => updater(e, index, "degree")}
-      />
-      <InputText
-        label="Year Graduated / Left"
-        value={data.yearEnd}
-        changeHandler={(e) => updater(e, index, "yearEnd")}
       />
       <label>
         <span> Achievements </span>
