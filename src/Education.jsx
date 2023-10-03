@@ -59,12 +59,12 @@ function EducationFS({ data, index, updater }) {
       />
       <InputText
         label="City"
-        value={data.school}
+        value={data.city}
         changeHandler={(e) => updater(e, index, "city")}
       />
       <InputText
         label="Country"
-        value={data.school}
+        value={data.country}
         changeHandler={(e) => updater(e, index, "country")}
       />
       <InputText
