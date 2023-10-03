@@ -25,20 +25,6 @@ export default function Personal({ data = {}, active, updater, toggler }) {
           </li>
           <li>
             <InputText
-              label="Phone Number"
-              value={data.phone}
-              changeHandler={(e) => updateData(e, "phone")}
-            />
-          </li>
-          <li>
-            <InputText
-              label="Email Address"
-              value={data.email}
-              changeHandler={(e) => updateData(e, "email")}
-            />
-          </li>
-          <li>
-            <InputText
               label="Country"
               value={data.country}
               changeHandler={(e) => updateData(e, "country")}
@@ -51,6 +37,21 @@ export default function Personal({ data = {}, active, updater, toggler }) {
               changeHandler={(e) => updateData(e, "city")}
             />
           </li>
+          <li>
+            <InputText
+              label="Phone Number"
+              value={data.phone}
+              changeHandler={(e) => updateData(e, "phone")}
+            />
+          </li>
+          <li>
+            <InputText
+              label="Email Address"
+              value={data.email}
+              changeHandler={(e) => updateData(e, "email")}
+            />
+          </li>
+
           <li>
             <label>
               <span> Professional Summary </span>

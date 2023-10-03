@@ -32,6 +32,58 @@ form {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+form section > ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 28px;
+  padding: 1.6rem;
+  margin: 0;
+}
+
+form section.personal > ul {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  gap: 8px;
+}
+
+form section.personal li:nth-child(1) {
+  grid-area: 1 / 1 / 2/ 3;
+}
+
+form section.personal input {
+  width: 100%;
+}
+
+form section.personal li:last-child label {
+  height: 100%;
+}
+
+form section.personal li:last-child textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+
+form section.personal li:last-child {
+  grid-column: 1 / 3;
+  height: 100%;
+  margin: 0;
+}
+
+@media (min-width: 750px) {
+  form section.personal > ul {
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(2, minmax(158px, 240px)) 1fr;
+    gap: 8px 16px;
+  }
+  form section.personal li:last-child {
+    grid-area: 1 / 3 / 4 / 4;
+    height: 100%;
+    margin: 0;
+  }
+}
+
 form section a {
   display: flex;
   gap: 1.6rem;
@@ -65,19 +117,9 @@ form label > span {
   font-weight: bold;
 }
 
-form section ul {
+form section li {
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  list-style-type: none;
-  padding: 0;
-}
-
-form section li,
-form section.personal ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 8px;
 }
 
