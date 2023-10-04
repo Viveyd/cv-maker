@@ -71,7 +71,8 @@ form section.personal li:last-child {
   margin: 0;
 }
 
-form section.education li {
+form section fieldset {
+  margin: 1.6rem;
 }
 
 @media (min-width: 750px) {
