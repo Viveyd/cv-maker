@@ -33,15 +33,18 @@ export default function Education({ data, updater, active, toggler }) {
         toggle={setActive}
         add={active ? addData : null}
       />
-      {active &&
-        data.map((item, index) => (
-          <EducationFS
-            key={item.id}
-            data={item}
-            {...{ index }}
-            updater={editData}
-          />
-        ))}
+      {active && (
+        <div className="dd-content">
+          {data.map((item, index) => (
+            <EducationFS
+              key={item.id}
+              data={item}
+              {...{ index }}
+              updater={editData}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 }
