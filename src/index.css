@@ -71,8 +71,27 @@ form section.personal li:last-child {
   margin: 0;
 }
 
-form section fieldset {
-  margin: 1.6rem;
+form section.education {
+  position: relative;
+}
+
+form section.education fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto) 1fr;
+  gap: 12px;
+  max-width: 500px;
+}
+
+form section.education fieldset input {
+  width: 100%;
+}
+form section.education fieldset > :last-child {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+form section.education fieldset > :last-child > textarea {
+  width: 100%;
 }
 
 @media (min-width: 750px) {
