@@ -36,15 +36,18 @@ export default function Experience({ data, updater, active, toggler }) {
         toggle={setActive}
         add={active ? addData : null}
       />
-      {active &&
-        data.map((item, index) => (
-          <ExperienceFS
-            key={item.id}
-            data={item}
-            index={index}
-            updater={editData}
-          />
-        ))}
+      {active && (
+        <div className="dd-content">
+          {data.map((item, index) => (
+            <ExperienceFS
+              key={item.id}
+              data={item}
+              index={index}
+              updater={editData}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 }
@@ -59,6 +62,11 @@ function ExperienceFS({ data, index, updater }) {
         changeHandler={(e) => updater(e, index, "company")}
       />
       <InputText
+        label="Job Title"
+        value={data.position}
+        changeHandler={(e) => updater(e, index, "position")}
+      />
+      <InputText
         label="Country"
         value={data.country}
         changeHandler={(e) => updater(e, index, "country")}
@@ -67,11 +75,6 @@ function ExperienceFS({ data, index, updater }) {
         label="City"
         value={data.city}
         changeHandler={(e) => updater(e, index, "city")}
-      />
-      <InputText
-        label="Position at Company"
-        value={data.position}
-        changeHandler={(e) => updater(e, index, "position")}
       />
       <InputText
         label="Year Started"
