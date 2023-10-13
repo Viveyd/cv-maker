@@ -5,6 +5,10 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+textarea {
+  resize: none;
+}
+
 #root {
   padding: 0;
 }
@@ -109,6 +113,23 @@ form section.experience div {
   padding: 16px;
 }
 
+form section.skills div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+}
+
+form section.skills fieldset {
+  border: 0;
+  width: 288px;
+}
+form input,
+form textarea {
+  padding: 12px;
+  width: 100%;
+}
+
 form section.experience div > fieldset {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -116,6 +137,13 @@ form section.experience div > fieldset {
   max-width: 900px;
   border: 0;
   gap: 16px;
+}
+
+form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
 }
 
 form legend {
