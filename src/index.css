@@ -36,6 +36,30 @@ form {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+form section a {
+  display: flex;
+  gap: 1.6rem;
+  text-decoration: none;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid grey;
+  padding: 0.6rem;
+  width: 100%;
+}
+form section a > h1 {
+  flex-grow: 1;
+  text-align: left;
+}
+
+form section a > button {
+  border: 0;
+  padding: 0;
+}
+
+form section h1 {
+  font-size: 2rem;
+  font-family: "Gabarito", cursive;
+}
+
 form section > ul {
   display: flex;
   flex-direction: column;
@@ -43,6 +67,17 @@ form section > ul {
   gap: 28px;
   padding: 1.6rem;
   margin: 0;
+}
+
+form div.dd-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+form div.dd-content > fieldset {
+  border: 0;
 }
 
 form section.personal > ul {
@@ -80,18 +115,13 @@ form section.education {
 }
 
 form section.education div {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
   max-width: 700px;
-  padding: 16px;
 }
 
 form section.education fieldset {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto) 1fr;
-  border: 0;
   gap: 16px;
 }
 
@@ -106,24 +136,22 @@ form section.education fieldset > :last-child > textarea {
   width: 100%;
 }
 
-form section.experience div {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 16px;
-}
-
-form section.skills div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 16px;
+form section.skills div,
+form section.achievements div {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 form section.skills fieldset {
-  border: 0;
-  width: 288px;
 }
+
+@media screen and (min-width: 600px) {
+  form section.skills div,
+  form section.achievements div {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 form input,
 form textarea {
   padding: 12px;
@@ -135,7 +163,6 @@ form section.experience div > fieldset {
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(4, auto);
   max-width: 900px;
-  border: 0;
   gap: 16px;
 }
 
@@ -197,30 +224,6 @@ form section.experience textarea {
     height: 100%;
     margin: 0;
   }
-}
-
-form section a {
-  display: flex;
-  gap: 1.6rem;
-  text-decoration: none;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid grey;
-  padding: 0.6rem;
-  width: 100%;
-}
-form section a > h1 {
-  flex-grow: 1;
-  text-align: left;
-}
-
-form section a > button {
-  border: 0;
-  padding: 0;
-}
-
-form section h1 {
-  font-size: 2rem;
-  font-family: "Gabarito", cursive;
 }
 
 form input[type="text"] {

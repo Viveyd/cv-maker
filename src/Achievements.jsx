@@ -26,16 +26,20 @@ export default function Achievements({ data = [], updater, active, toggler }) {
   function AchievementFS(data) {
     return (
       <fieldset key={data.id}>
+        <legend> Achievement </legend>
         <InputText
-          label="Achievement"
+          label="Label"
           value={data.achievement}
           changeHandler={(e) => editData(e, data.id, "achievement")}
         />
-        <InputText
-          label="Description"
-          value={data.description}
-          changeHandler={(e) => editData(e, data.id, "description")}
-        />
+
+        <label>
+          <span> Description </span>
+          <textarea
+            value={data.description}
+            onChange={(e) => editData(e, data.id, "description")}
+          ></textarea>
+        </label>
       </fieldset>
     );
   }
@@ -47,7 +51,11 @@ export default function Achievements({ data = [], updater, active, toggler }) {
         toggle={setActive}
         add={active ? addData : null}
       />
-      {active && data.map((item) => AchievementFS(item))}
+      {active && (
+        <div className="dd-content">
+          {data.map((item) => AchievementFS(item))}
+        </div>
+      )}
     </section>
   );
 }
