@@ -50,6 +50,7 @@ function SkillGroup({ data, updater }) {
         <span> Label </span>
         <input
           value={data.label}
+          placeholder="Name / classification of skills"
           onChange={(e) => updater(e, data.id, "label")}
         ></input>
       </label>
@@ -57,6 +58,7 @@ function SkillGroup({ data, updater }) {
         <span> Values </span>
         <textarea
           value={data.values}
+          placeholder="List of skills / interests (separated by commas)"
           onChange={(e) => updater(e, data.id, "values")}
         ></textarea>
       </label>
