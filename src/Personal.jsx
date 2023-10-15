@@ -20,6 +20,7 @@ export default function Personal({ data = {}, active, updater, toggler }) {
             <InputText
               label="Full Name"
               value={data.name}
+              placeholder="Ex. John Doe"
               changeHandler={(e) => updateData(e, "name")}
             />
           </li>
@@ -27,6 +28,7 @@ export default function Personal({ data = {}, active, updater, toggler }) {
             <InputText
               label="Country"
               value={data.country}
+              placeholder="Name of Country"
               changeHandler={(e) => updateData(e, "country")}
             />
           </li>
@@ -34,6 +36,7 @@ export default function Personal({ data = {}, active, updater, toggler }) {
             <InputText
               label="City"
               value={data.city}
+              placeholder="Name of City and/or Province"
               changeHandler={(e) => updateData(e, "city")}
             />
           </li>
@@ -41,12 +44,14 @@ export default function Personal({ data = {}, active, updater, toggler }) {
             <InputText
               label="Phone Number"
               value={data.phone}
+              placeholder="Mobile/Home Phone Number"
               changeHandler={(e) => updateData(e, "phone")}
             />
           </li>
           <li>
             <InputText
               label="Email Address"
+              placeholder="Ex. johndoe@gmail.com"
               value={data.email}
               changeHandler={(e) => updateData(e, "email")}
             />
@@ -57,6 +62,7 @@ export default function Personal({ data = {}, active, updater, toggler }) {
               <span> Professional Summary </span>
               <textarea
                 value={data.summary}
+                placeholder="Summarize your skills, achievements, and experience. Convince employers why to pick you. Use numbers in describing accomplishments. Limit to 3-5 sentences"
                 onChange={(e) => updateData(e, "summary")}
               ></textarea>
             </label>

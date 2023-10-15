@@ -12,8 +12,7 @@ function App() {
     email: "",
     country: "",
     city: "",
-    summary:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam quasi nostrum vero fugit deleniti! Enim at aliquid tenetur qui culpa laboriosam nam maxime possimus inventore asperiores nihil, nisi dolor debitis!",
+    summary: "",
     links: [],
   });
   const [education, setEdu] = useState([
