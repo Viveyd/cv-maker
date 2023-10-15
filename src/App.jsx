@@ -22,7 +22,7 @@ function App() {
       course: "",
       degree: "",
       yearEnd: "",
-      achievements: "Honors, Projects, Awards",
+      achievements: "",
     },
   ]);
   const [experience, setExp] = useState([
