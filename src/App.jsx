@@ -34,8 +34,7 @@ function App() {
       position: "",
       yearStart: "",
       yearEnd: "",
-      achievements:
-        "Sample Job Responsibility 1, Sample Job Responsibility 2, Achievement 1, Achievement 2",
+      achievements: "",
     },
   ]);
   const [skills, setSkills] = useState([

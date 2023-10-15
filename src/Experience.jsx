@@ -59,37 +59,44 @@ function ExperienceFS({ data, index, updater }) {
       <InputText
         label="Company"
         value={data.company}
+        placeholder="Name of Company"
         changeHandler={(e) => updater(e, index, "company")}
       />
       <InputText
         label="Job Title"
         value={data.position}
+        placeholder="Your position"
         changeHandler={(e) => updater(e, index, "position")}
       />
       <InputText
         label="Country"
         value={data.country}
+        placeholder="Name of country"
         changeHandler={(e) => updater(e, index, "country")}
       />
       <InputText
         label="City"
         value={data.city}
+        placeholder="Name of city/province"
         changeHandler={(e) => updater(e, index, "city")}
       />
       <InputText
         label="Year Started"
         value={data.yearStart}
+        placeholder="Year/date you started"
         changeHandler={(e) => updater(e, index, "yearStart")}
       />
       <InputText
         label="Year Left"
         value={data.yearEnd}
+        placeholder="Year/date you left"
         changeHandler={(e) => updater(e, index, "yearEnd")}
       />
       <label>
         <span> Achievements </span>
         <textarea
           value={data.achievements}
+          placeholder="What you did for the company. Your responsibilities and accomplishments. Numbers look good here."
           onChange={(e) => updater(e, index, "achievements")}
         ></textarea>
       </label>
