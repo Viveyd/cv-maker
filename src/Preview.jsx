@@ -1,5 +1,24 @@
+import { useEffect } from "react";
+
 export default function Preview({ data }) {
   const { personal, education, experience, skills, achievements } = data;
+
+  useEffect(() => {
+    function resize() {
+      const wrapper = document.querySelector("div#root");
+      const content = document.querySelector("section.preview");
+      const [wrapperW, wrapperH] = [
+        wrapper.clientWidth,
+        wrapper.clientHeight - 75,
+      ]; // 75 to offset the height occupied by header
+      const [contentW, contentH] = [content.offsetWidth, content.offsetHeight];
+      const scale = Math.min(wrapperW / contentW, wrapperH / contentH);
+      content.style.transform = `scale(${scale})`;
+    }
+    resize();
+    window.addEventListener("resize", resize);
+  }, []);
+
   return (
     <section className="preview">
       <section className="personal">
