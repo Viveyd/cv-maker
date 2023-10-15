@@ -10,7 +10,7 @@ export default function Education({ data, updater, active, toggler }) {
       location: "",
       degreeMajor: "",
       yearEnd: "",
-      achievements: "Honors, Projects, Awards",
+      achievements: "",
     };
     updater(data.concat(newData));
   }
