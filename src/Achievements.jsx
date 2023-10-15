@@ -23,29 +23,6 @@ export default function Achievements({ data = [], updater, active, toggler }) {
     toggler("achievements");
   }
 
-  function AchievementFS(data, index) {
-    return (
-      <fieldset key={data.id}>
-        <legend> Achievement {index + 1} </legend>
-        <InputText
-          label="Label"
-          value={data.achievement}
-          placeholder="Relevant side-projects or accomplishments"
-          changeHandler={(e) => editData(e, data.id, "achievement")}
-        />
-
-        <label>
-          <span> Description </span>
-          <textarea
-            value={data.description}
-            placeholder="Good points/review of the accomplishment"
-            onChange={(e) => editData(e, data.id, "description")}
-          ></textarea>
-        </label>
-      </fieldset>
-    );
-  }
-
   return (
     <section className="achievements">
       <DropdownAnchor
@@ -55,7 +32,28 @@ export default function Achievements({ data = [], updater, active, toggler }) {
       />
       {active && (
         <div className="dd-content">
-          {data.map((item, index) => AchievementFS(item, index))}
+          {data.map((item, index) => {
+            return (
+              <fieldset key={item.id}>
+                <legend> Achievement {index + 1} </legend>
+                <InputText
+                  label="Label"
+                  value={data.achievement}
+                  placeholder="Relevant side-projects or accomplishments"
+                  changeHandler={(e) => editData(e, item.id, "achievement")}
+                />
+
+                <label>
+                  <span> Description </span>
+                  <textarea
+                    value={data.description}
+                    placeholder="Good points/review of the accomplishment"
+                    onChange={(e) => editData(e, item.id, "description")}
+                  ></textarea>
+                </label>
+              </fieldset>
+            );
+          })}
         </div>
       )}
     </section>
