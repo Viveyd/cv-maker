@@ -34,29 +34,29 @@ export default function Form({ data, updater }) {
         toggler={changeActiveSection}
         active={activeSection === "personal"}
       />
-      <Education
-        data={education}
-        updater={setEdu}
-        toggler={changeActiveSection}
-        active={activeSection === "education"}
-      />
       <Experience
         data={experience}
         updater={setExp}
         toggler={changeActiveSection}
         active={activeSection === "experience"}
       />
-      <Skills
-        data={skills}
-        updater={setSkills}
+      <Education
+        data={education}
+        updater={setEdu}
         toggler={changeActiveSection}
-        active={activeSection === "skills"}
+        active={activeSection === "education"}
       />
       <Achievements
         data={achievements}
         updater={setAchievements}
         toggler={changeActiveSection}
         active={activeSection === "achievements"}
+      />
+      <Skills
+        data={skills}
+        updater={setSkills}
+        toggler={changeActiveSection}
+        active={activeSection === "skills"}
       />
     </form>
   );
