@@ -60,7 +60,7 @@ function SkillGroup({ data, index, updater }) {
         ></input>
       </label>
       <label>
-        <span> Values </span>
+        <span> Values (separate with commas) </span>
         <textarea
           value={data.values}
           placeholder="List of skills / interests (separated by commas)"

@@ -78,7 +78,7 @@ function EducationFS({ data, index, updater }) {
         changeHandler={(e) => updater(e, index, "yearEnd")}
       />
       <label>
-        <span> Achievements </span>
+        <span> Achievements (separate with commas) </span>
         <textarea
           value={data.achievements}
           placeholder="Honors and awards to show achiever attitude. Projects / courses / competitions relevant to the job, hintig at capability."

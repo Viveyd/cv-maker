@@ -92,10 +92,10 @@ function ExperienceFS({ data, index, updater }) {
         changeHandler={(e) => updater(e, index, "yearEnd")}
       />
       <label>
-        <span> Achievements </span>
+        <span> Achievements (separate with commas) </span>
         <textarea
           value={data.achievements}
-          placeholder="What you did for the company. Your responsibilities and accomplishments. Numbers look good here."
+          placeholder="Separated by commas, list what you did for the company. Your responsibilities and accomplishments. Numbers look good here."
           onChange={(e) => updater(e, index, "achievements")}
         ></textarea>
       </label>
