@@ -52,13 +52,8 @@ function App() {
   const [achievements, setAchievements] = useState([
     {
       id: 0,
-      achievement: "Lorem, ipsum",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      id: 1,
-      achievement: "Lorem, ipsum",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      achievement: "",
+      description: "",
     },
   ]);
   const [activeSection, setActiveSection] = useState("personal");

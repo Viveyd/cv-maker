@@ -30,6 +30,7 @@ export default function Achievements({ data = [], updater, active, toggler }) {
         <InputText
           label="Label"
           value={data.achievement}
+          placeholder="Relevant side-projects or accomplishments"
           changeHandler={(e) => editData(e, data.id, "achievement")}
         />
 
@@ -37,6 +38,7 @@ export default function Achievements({ data = [], updater, active, toggler }) {
           <span> Description </span>
           <textarea
             value={data.description}
+            placeholder="Good points/review of the accomplishment"
             onChange={(e) => editData(e, data.id, "description")}
           ></textarea>
         </label>
