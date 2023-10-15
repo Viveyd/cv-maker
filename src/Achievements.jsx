@@ -23,10 +23,10 @@ export default function Achievements({ data = [], updater, active, toggler }) {
     toggler("achievements");
   }
 
-  function AchievementFS(data) {
+  function AchievementFS(data, index) {
     return (
       <fieldset key={data.id}>
-        <legend> Achievement </legend>
+        <legend> Achievement {index + 1} </legend>
         <InputText
           label="Label"
           value={data.achievement}
@@ -55,7 +55,7 @@ export default function Achievements({ data = [], updater, active, toggler }) {
       />
       {active && (
         <div className="dd-content">
-          {data.map((item) => AchievementFS(item))}
+          {data.map((item, index) => AchievementFS(item, index))}
         </div>
       )}
     </section>

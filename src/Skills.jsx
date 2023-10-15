@@ -33,8 +33,13 @@ export default function Skills({ data, updater, active, toggler }) {
       />
       {active && (
         <div className="dd-content">
-          {data.map((item) => (
-            <SkillGroup key={item.id} data={item} updater={updateData} />
+          {data.map((item, index) => (
+            <SkillGroup
+              key={item.id}
+              index={index}
+              data={item}
+              updater={updateData}
+            />
           ))}
         </div>
       )}
@@ -42,10 +47,10 @@ export default function Skills({ data, updater, active, toggler }) {
   );
 }
 
-function SkillGroup({ data, updater }) {
+function SkillGroup({ data, index, updater }) {
   return (
     <fieldset>
-      <legend> Group </legend>
+      <legend> Group {index + 1} </legend>
       <label>
         <span> Label </span>
         <input
