@@ -99,7 +99,7 @@ export default function Preview({ data }) {
               city,
               country,
               course,
-              degree,
+              degreeMajor,
               yearEnd,
               achievements,
             } = item;
@@ -112,11 +112,9 @@ export default function Preview({ data }) {
                   }`}</span>
                 </h3>
                 <p>
-                  <span className="italic">{`${
-                    degree || "Bachelor's"
-                  } Degree, Major in ${
-                    course || "Information Technology"
-                  }`}</span>
+                  <span className="italic">
+                    {degreeMajor || "Degree & Major"}
+                  </span>
                   <span className="italic">
                     {" "}
                     {`${yearEnd || "Year Graduated / Left"} `}
