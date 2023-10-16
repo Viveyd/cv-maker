@@ -32,7 +32,10 @@ export default function Preview({ data }) {
         </span>
       </section>
       <hr></hr>
-      <section>{personal.summary}</section>
+      <section>
+        {personal.summary ||
+          "Vestibulum lacinia diam eu nunc gravida pellentesque. Quisque quis quam justo. Donec turpis tellus, dignissim in ullamcorper at, finibus sed risus. Mauris ornare justo vitae erat dapibus, sit amet bibendum est vehicula. Sed fermentum turpis in urna pulvinar, in egestas elit fermentum. Suspendisse imperdiet faucibus hendrerit. Maecenas varius lectus nulla, at varius orci auctor in."}
+      </section>
       <hr></hr>
       <section className="experience">
         <h2>Work Experience</h2>
@@ -66,9 +69,19 @@ export default function Preview({ data }) {
                   }`}</span>
                 </p>
                 <ul className="achievements preview-list-box">
-                  {achievements.split(",").map((item, index) => (
-                    <li key={index}> {item.trim()} </li>
-                  ))}
+                  {achievements.length ? (
+                    achievements
+                      .split(",")
+                      .map((item, index) => (
+                        <li key={index}> {item.trim()} </li>
+                      ))
+                  ) : (
+                    <>
+                      <li>Achievements</li>
+                      <li>Accomplishments</li>
+                      <li> Responsibilities</li>
+                    </>
+                  )}
                 </ul>
               </li>
             );
@@ -110,9 +123,19 @@ export default function Preview({ data }) {
                   </span>
                 </p>
                 <ul className="achievements preview-list-box">
-                  {achievements.split(",").map((item, index) => (
-                    <li key={index}> {item.trim()} </li>
-                  ))}
+                  {achievements.length ? (
+                    achievements
+                      .split(",")
+                      .map((item, index) => (
+                        <li key={index}> {item.trim()} </li>
+                      ))
+                  ) : (
+                    <>
+                      <li> Honors & Awards </li>
+                      <li> Relevant Projects </li>
+                      <li> Relevant Activities </li>
+                    </>
+                  )}
                 </ul>
               </li>
             );
@@ -123,15 +146,44 @@ export default function Preview({ data }) {
         <h2>Achievements</h2>
         <hr className="t-margin-2"></hr>
         <ul className="preview-list-box">
-          {achievements.map((item) => {
-            const { id, achievement, description } = item;
-            return (
-              <li key={id}>
-                <strong> {achievement}. </strong>
-                <span>{description}</span>
+          {achievements.length ? (
+            achievements.map((item) => {
+              const { id, achievement, description } = item;
+              return (
+                <li key={id}>
+                  <strong>
+                    {" "}
+                    {achievement || "Relevant accomplishment "}.{" "}
+                  </strong>
+                  <span>
+                    {description ||
+                      "Fusce sem nisl, cursus nec feugiat vitae, commodo eu turpis. Duis risus erat, scelerisque iaculis odio id, mattis dapibus erat. Nunc ligula nulla, efficitur non dignissim ut,ullamcorper eget sapien."}
+                  </span>
+                </li>
+              );
+            })
+          ) : (
+            <>
+              <li>
+                <strong> Personal Project. </strong>
+                <span>
+                  Cras non velit auctor, tempor mi ut, convallis libero. Quisque
+                  placerat dapibus tempor.
+                </span>
               </li>
-            );
-          })}
+              <li>
+                <strong> Certification. </strong>
+                <span>
+                  In scelerisque magna arcu. Sed urna eros, elementum at
+                  malesuada sed, fermentum ullamcorper sapien.{" "}
+                </span>
+              </li>
+              <li>
+                <strong> Accomplishment. </strong>
+                <span></span>
+              </li>
+            </>
+          )}
         </ul>
       </section>
       <section className="skills">
