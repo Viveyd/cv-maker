@@ -1,11 +1,12 @@
 import DeleteBtn from "./DeleteBtn";
 import DropdownAnchor from "./DropdownAnchor";
+import { v4 as generateId } from "uuid";
 
 export default function Skills({ data, updater, active, toggler }) {
   function addData(e) {
     e.preventDefault();
     const newData = {
-      id: data.length ? data[data.length - 1].id + 1 : 0,
+      id: generateId(),
       label: "",
       values: "",
     };

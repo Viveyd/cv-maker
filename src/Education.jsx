@@ -1,12 +1,13 @@
 import InputText from "./InputText";
 import DropdownAnchor from "./DropdownAnchor";
 import DeleteBtn from "./DeleteBtn";
+import { v4 as generateId } from "uuid";
 
 export default function Education({ data, updater, active, toggler }) {
   function addData(e) {
     e.preventDefault();
     const newData = {
-      id: data.length ? data[data.length - 1].id + 1 : 0,
+      id: generateId(),
       school: "",
       location: "",
       degreeMajor: "",
