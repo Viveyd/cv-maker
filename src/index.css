@@ -320,33 +320,3 @@ section.preview {
 .italic {
   font-style: italic;
 }
-
-@media print {
-  body {
-    min-height: unset;
-  }
-  div#root > *:not(.preview) {
-    display: none;
-    padding: 0;
-  }
-  section.preview {
-    margin-top: 0;
-    font-size: 1.2rem !important;
-    scale: 1;
-    transform: scale(1) !important;
-    border: 0;
-  }
-
-  .preview section.personal h1 {
-    font-size: 2.4rem !important;
-  }
-  .preview section.personal span {
-    font-size: 1.6rem !important;
-  }
-  .preview h2 {
-    font-size: 1.6rem !important;
-  }
-  @page {
-    margin: 0;
-  }
-}
