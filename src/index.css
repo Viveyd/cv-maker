@@ -176,10 +176,14 @@ form fieldset {
 }
 
 form legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
   font-size: 16px;
   font-family: "Gabarito", cursive;
   padding: 0;
-  text-align: left;
   letter-spacing: 1px;
 }
 
