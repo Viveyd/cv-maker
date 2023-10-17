@@ -1,5 +1,7 @@
 import InputText from "./InputText";
 import DropdownAnchor from "./DropdownAnchor";
+import Icon from "@mdi/react";
+import { mdiDeleteForever } from "@mdi/js";
 
 export default function Experience({ data, updater, active, toggler }) {
   function addData(e) {
@@ -54,7 +56,11 @@ export default function Experience({ data, updater, active, toggler }) {
 function ExperienceFS({ data, index, updater }) {
   return (
     <fieldset>
-      <legend> Experience {index + 1} </legend>
+      <legend>
+        <span>Experience {index + 1}</span>
+        <Icon path={mdiDeleteForever} size={1} />
+      </legend>
+
       <InputText
         label="Company"
         value={data.company}
