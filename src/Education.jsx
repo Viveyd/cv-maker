@@ -1,5 +1,6 @@
 import InputText from "./InputText";
 import DropdownAnchor from "./DropdownAnchor";
+import DeleteBtn from "./DeleteBtn";
 
 export default function Education({ data, updater, active, toggler }) {
   function addData(e) {
@@ -19,6 +20,10 @@ export default function Education({ data, updater, active, toggler }) {
     const newData = [...data];
     newData.find((item) => item.id === id)[key] = e.target.value;
     updater(newData);
+  }
+
+  function deleteData(id) {
+    updater(data.filter((item) => item.id !== id));
   }
 
   function setActive(e) {
@@ -41,6 +46,7 @@ export default function Education({ data, updater, active, toggler }) {
               data={item}
               {...{ index }}
               updater={editData}
+              deleter={() => deleteData(item.id)}
             />
           ))}
         </div>
@@ -49,10 +55,13 @@ export default function Education({ data, updater, active, toggler }) {
   );
 }
 
-function EducationFS({ data, index, updater }) {
+function EducationFS({ data, index, updater, deleter }) {
   return (
     <fieldset>
-      <legend> Education {index + 1} </legend>
+      <legend>
+        <span>Education {index + 1}</span>
+        <DeleteBtn onClickHandler={deleter} />
+      </legend>
       <InputText
         label="School"
         value={data.school}

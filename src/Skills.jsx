@@ -1,3 +1,4 @@
+import DeleteBtn from "./DeleteBtn";
 import DropdownAnchor from "./DropdownAnchor";
 
 export default function Skills({ data, updater, active, toggler }) {
@@ -17,6 +18,10 @@ export default function Skills({ data, updater, active, toggler }) {
       return item;
     });
     updater(updatedData);
+  }
+
+  function deleteData(id) {
+    updater(data.filter((item) => item.id !== id));
   }
 
   function setActive(e) {
@@ -39,6 +44,7 @@ export default function Skills({ data, updater, active, toggler }) {
               index={index}
               data={item}
               updater={updateData}
+              deleter={() => deleteData(item.id)}
             />
           ))}
         </div>
@@ -47,10 +53,12 @@ export default function Skills({ data, updater, active, toggler }) {
   );
 }
 
-function SkillGroup({ data, index, updater }) {
+function SkillGroup({ data, index, updater, deleter }) {
   return (
     <fieldset>
-      <legend> Group {index + 1} </legend>
+      <legend>
+        <span>Group {index + 1}</span> <DeleteBtn onClickHandler={deleter} />
+      </legend>
       <label>
         <span> Label </span>
         <input
