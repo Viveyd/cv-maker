@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import "./print.css";
 import Form from "./Form";
 import Preview from "./Preview";
 import printPreview from "./printPreview";
