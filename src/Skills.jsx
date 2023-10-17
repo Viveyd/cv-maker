@@ -38,7 +38,7 @@ export default function Skills({ data, updater, active, toggler }) {
         add={active ? addData : null}
       />
       {active && (
-        <div className="dd-content">
+        <div className={data.length ? "dd-content" : "dd-content empty"}>
           {data.length
             ? data.map((item, index) => (
                 <SkillGroup

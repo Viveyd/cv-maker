@@ -42,7 +42,7 @@ export default function Experience({ data, updater, active, toggler }) {
         add={active ? addData : null}
       />
       {active && (
-        <div className="dd-content">
+        <div className={data.length ? "dd-content" : "dd-content empty"}>
           {data.length
             ? data.map((item, index) => (
                 <ExperienceFS

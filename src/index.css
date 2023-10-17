@@ -82,6 +82,15 @@ form div.dd-content > fieldset {
   border: 0;
 }
 
+.dd-content.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: unset;
+  width: 100%;
+  max-width: none;
+}
+
 form section.personal > ul {
   display: grid;
   grid-template-rows: repeat(4, auto);
