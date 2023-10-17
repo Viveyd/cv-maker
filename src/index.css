@@ -187,6 +187,12 @@ form legend {
   letter-spacing: 1px;
 }
 
+form legend > button {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+}
+
 form section.experience label:last-child {
   grid-area: 4 / 1 / 5 / 3;
 }

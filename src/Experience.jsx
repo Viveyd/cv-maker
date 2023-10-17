@@ -58,7 +58,9 @@ function ExperienceFS({ data, index, updater }) {
     <fieldset>
       <legend>
         <span>Experience {index + 1}</span>
-        <Icon path={mdiDeleteForever} size={1} />
+        <button>
+          <Icon path={mdiDeleteForever} size={1} />
+        </button>
       </legend>
 
       <InputText
