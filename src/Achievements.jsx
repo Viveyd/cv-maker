@@ -38,31 +38,33 @@ export default function Achievements({ data = [], updater, active, toggler }) {
       />
       {active && (
         <div className="dd-content">
-          {data.map((item, index) => {
-            return (
-              <fieldset key={item.id}>
-                <legend>
-                  <span>Achievement {index + 1}</span>
-                  <DeleteBtn onClickHandler={() => deleteData(item.id)} />
-                </legend>
-                <InputText
-                  label="Label"
-                  value={data.achievement}
-                  placeholder="Relevant side-projects or accomplishments"
-                  changeHandler={(e) => editData(e, item.id, "achievement")}
-                />
+          {data.length
+            ? data.map((item, index) => {
+                return (
+                  <fieldset key={item.id}>
+                    <legend>
+                      <span>Achievement {index + 1}</span>
+                      <DeleteBtn onClickHandler={() => deleteData(item.id)} />
+                    </legend>
+                    <InputText
+                      label="Label"
+                      value={data.achievement}
+                      placeholder="Relevant side-projects or accomplishments"
+                      changeHandler={(e) => editData(e, item.id, "achievement")}
+                    />
 
-                <label>
-                  <span> Description </span>
-                  <textarea
-                    value={data.description}
-                    placeholder="Good points/review of the accomplishment"
-                    onChange={(e) => editData(e, item.id, "description")}
-                  ></textarea>
-                </label>
-              </fieldset>
-            );
-          })}
+                    <label>
+                      <span> Description </span>
+                      <textarea
+                        value={data.description}
+                        placeholder="Good points/review of the accomplishment"
+                        onChange={(e) => editData(e, item.id, "description")}
+                      ></textarea>
+                    </label>
+                  </fieldset>
+                );
+              })
+            : "Click + to add some of your accomplishments. This section is omitted from the resume until you do so."}
         </div>
       )}
     </section>

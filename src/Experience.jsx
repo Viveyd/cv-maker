@@ -43,15 +43,17 @@ export default function Experience({ data, updater, active, toggler }) {
       />
       {active && (
         <div className="dd-content">
-          {data.map((item, index) => (
-            <ExperienceFS
-              key={item.id}
-              data={item}
-              index={index}
-              updater={editData}
-              deleter={() => deleteData(item.id)}
-            />
-          ))}
+          {data.length
+            ? data.map((item, index) => (
+                <ExperienceFS
+                  key={item.id}
+                  data={item}
+                  index={index}
+                  updater={editData}
+                  deleter={() => deleteData(item.id)}
+                />
+              ))
+            : "Click + to add in your working experience. This section is omitted from the resume until you do so."}
         </div>
       )}
     </section>

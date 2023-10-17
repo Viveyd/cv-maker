@@ -39,15 +39,17 @@ export default function Skills({ data, updater, active, toggler }) {
       />
       {active && (
         <div className="dd-content">
-          {data.map((item, index) => (
-            <SkillGroup
-              key={item.id}
-              index={index}
-              data={item}
-              updater={updateData}
-              deleter={() => deleteData(item.id)}
-            />
-          ))}
+          {data.length
+            ? data.map((item, index) => (
+                <SkillGroup
+                  key={item.id}
+                  index={index}
+                  data={item}
+                  updater={updateData}
+                  deleter={() => deleteData(item.id)}
+                />
+              ))
+            : "Click + to add some of your skills / interests. This section is omitted from the resume until you do so."}
         </div>
       )}
     </section>

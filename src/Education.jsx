@@ -41,15 +41,17 @@ export default function Education({ data, updater, active, toggler }) {
       />
       {active && (
         <div className="dd-content">
-          {data.map((item, index) => (
-            <EducationFS
-              key={item.id}
-              data={item}
-              {...{ index }}
-              updater={editData}
-              deleter={() => deleteData(item.id)}
-            />
-          ))}
+          {data.length
+            ? data.map((item, index) => (
+                <EducationFS
+                  key={item.id}
+                  data={item}
+                  {...{ index }}
+                  updater={editData}
+                  deleter={() => deleteData(item.id)}
+                />
+              ))
+            : "Click + to add in your educational background. This section is omitted from the resume until you do so."}
         </div>
       )}
     </section>
