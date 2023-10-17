@@ -29,6 +29,10 @@ export default function Experience({ data, updater, active, toggler }) {
     toggler("experience");
   }
 
+  function deleteData(id) {
+    updater(data.filter((item) => item.id !== id));
+  }
+
   return (
     <section className="experience">
       <DropdownAnchor
@@ -44,6 +48,7 @@ export default function Experience({ data, updater, active, toggler }) {
               data={item}
               index={index}
               updater={editData}
+              deleter={() => deleteData(item.id)}
             />
           ))}
         </div>
@@ -52,12 +57,12 @@ export default function Experience({ data, updater, active, toggler }) {
   );
 }
 
-function ExperienceFS({ data, index, updater }) {
+function ExperienceFS({ data, index, updater, deleter }) {
   return (
     <fieldset>
       <legend>
         <span>Experience {index + 1}</span>
-        <DeleteBtn />
+        <DeleteBtn onClickHandler={deleter} />
       </legend>
 
       <InputText
